@@ -1,0 +1,39 @@
+
+USE final_project; 
+CREATE TABLE users (
+userid INT(5) NOT NULL UNIQUE AUTO_INCREMENT, 
+namee VARCHAR (255), 
+username VARCHAR (20), 
+address VARCHAR (245), 
+city VARCHAR (255), 
+state CHAR (2), 
+zip  INT (5), 
+password VARCHAR (245), 
+PRIMARY KEY (userid)
+); 
+
+USE final_project; 
+
+CREATE TABLE locations (
+intemid INT NOT NULL AUTO_INCREMENT, 
+type INT, 
+description VARCHAR (125), 
+lng REAL, 
+lat REAL, 
+PRIMARY KEY (intemid) 
+); 
+
+ALTER TABLE locations
+MODIFY COLUMN type INT NOT NULL, 
+MODIFY COLUMN description VARCHAR (125) NOT NULL, 
+MODIFY COLUMN lng REAL NOT NULL, 
+MODIFY COLUMN lat REAL NOT NULL; 
+
+ALTER TABLE users 
+MODIFY COLUMN namee VARCHAR (255) NOT NULL, 
+MODIFY COLUMN username VARCHAR (20) NOT NULL, 
+MODIFY COLUMN password VARCHAR (255) NOT NULL; 
+
+ALTER TABLE photograph
+MODIFY COLUMN photoid INT NOT NULL, 
+MODIFY COLUMN locationid INT NOT NULL; 
